@@ -1,3 +1,10 @@
+.fieldArea{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .loginArea{
     display: flex;
     justify-content: center;
@@ -22,4 +29,34 @@
     text-align: center;
     color: gray;
     font-size: 10px;
+}
+
+.field{
+    margin-bottom: 20px;
+}
+
+.actions{
+    border: none;
+}
+
+.loginBtn{
+    border-radius: 20px;
+    border: none;
+    background-color: skyblue;
+    color: white;
+    padding: 10px 30px;
+}
+
+.conform{
+    border-radius: 20px;
+    background-color: skyblue;
+    color: white;
+    padding: 10px 30px;
+    text-align: center;
+}
+
+.conformArea{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
 }
