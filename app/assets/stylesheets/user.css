@@ -42,14 +42,14 @@
 .loginBtn{
     border-radius: 20px;
     border: none;
-    background-color: skyblue;
+    background-color: rgb(205, 147, 205);
     color: white;
     padding: 10px 30px;
 }
 
 .conform{
     border-radius: 20px;
-    background-color: skyblue;
+    background-color: rgb(205, 147, 205);
     color: white;
     padding: 10px 30px;
     text-align: center;
