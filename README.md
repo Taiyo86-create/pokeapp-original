@@ -1,24 +1,78 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users テーブル
 
-Things you may want to cover:
+| Column             | Type    | Options                   |
+| ------------------ | ------- | ------------------------- |
+| nickName           | string  | null: false               |
+| email              | string  | null: false, unique: true |
+| encrypted_password | string  | null: false               |
+| profile            | text    |                           |
+| age_id             | integer | null: false               |
+| sex_id             | integer | null: false               |
+| status_id          | integer | null: false               |
+| favorite_title_id  | integer | null: false               |
+| phone_number       | integer | null: false               |
+| icon_id            | integer | null: false               |
 
-* Ruby version
+### Association
 
-* System dependencies
+- has_many :room_users
+- has_many :rooms, through: :room_users
+- has_many :messages
+- has_many :matches
 
-* Configuration
+## rooms テーブル
 
-* Database creation
+| Column | Type   | Options     |
+| ------ | ------ | ----------- |
+| name   | string | null: false |
 
-* Database initialization
+### Association
 
-* How to run the test suite
+- has_many :room_users
+- has_many :users, through: :room_users
+- has_many :messages
 
-* Services (job queues, cache servers, search engines, etc.)
+## room_users テーブル
 
-* Deployment instructions
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| user   | references | null: false, foreign_key: true |
+| room   | references | null: false, foreign_key: true |
 
-* ...
+### Association
+
+- belongs_to :room
+- belongs_to :user
+
+## messages テーブル
+
+| Column  | Type       | Options                        |
+| ------- | ---------- | ------------------------------ |
+| content | string     |                                |
+| user    | references | null: false, foreign_key: true |
+| room    | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :room
+- belongs_to :user
+
+## matches テーブル
+
+| Column  | Type       | Options                        |
+| ------- | ---------- | ------------------------------ |
+| user_id | references | null: false, foreign_key: true |
+
+- has_many :users
+
+## matches テーブル
+
+| Column   | Type       | Options                        |
+| -------- | ---------- | ------------------------------ |
+| user_id  | references | null: false, foreign_key: true |
+| match_id | references | null: false, foreign_key: true |
+
+- belongs_to :user
+- belongs_to :match
