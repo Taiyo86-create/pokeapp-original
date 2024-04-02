@@ -7,11 +7,11 @@
 
     <div class="mypageRight">
         <ul class="mypageList">
-            <li>名前:太陽</li>
-            <li>年齢:24歳</li>
-            <li>性別:♂</li>
-            <li>職業:社会人</li>
-            <li>好きなタイトル:SV</li>
+            <li>名前: <%= current_user.nick_name %> </li>
+            <li>年齢: <%= current_user.age.name %> </li>
+            <li>性別: <%= current_user.sex.name %> </li>
+            <li>職業: <%= current_user.status.name %> </li>
+            <li>好きなタイトル: <%= current_user.favorite_title.name %></li>
         </ul>
 
         <div class="rightOption">
