@@ -16,12 +16,12 @@
           <% @users.each do |user| %>
           <% unless user == current_user %>
             <div class="mainBigArea">
-            <%= image_tag user.icon.image_path, class:"moonball" %>
+            <%= image_tag 'moonball.png', class:"moonball" %>
               <div class="mainBox">
-                <%= image_tag "rizay.png", class:"icon" %>
+                <%= image_tag user.icon.image_path, class:"icon" %>
                 <ul class="intro">
-                    <li>太陽</li>
-                    <li>24歳</li>
+                    <li><%= user.nick_name %></li>
+                    <li> <%= user.age.name %></li>
                 </ul>
               </div>
             </div>
