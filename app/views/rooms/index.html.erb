@@ -7,7 +7,9 @@
                 <li><a href="#">チャット</a></li>
             </ul>
             
-                <a href="#"><i class="bi bi-person-circle"></i></a>
+                <%= link_to user_path(current_user) do %>
+                    <i class="bi bi-person-circle"></i>
+                <% end %>
         </div>
 
         <div class="mainArea" id="mainArea">

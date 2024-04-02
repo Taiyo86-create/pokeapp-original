@@ -16,7 +16,6 @@
 .loginBox{
     width: 80%;
     max-width: 400px;
-    height: 70vh;
     background-color: white;
     border-radius: 15px;
 }
@@ -38,6 +37,7 @@
 
 .actions{
     border: none;
+    margin-bottom: 10px;
 }
 
 .loginBtn{
@@ -62,3 +62,8 @@
     margin-top: 20px;
 }
 
+.hashData {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}

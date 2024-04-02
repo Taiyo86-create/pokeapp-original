@@ -13,6 +13,7 @@
 | status_id          | integer | null: false               |
 | favorite_title_id  | integer | null: false               |
 | phone_number       | integer | null: false               |
+| icon_id            | integer | null: false               |
 
 ### Association
 

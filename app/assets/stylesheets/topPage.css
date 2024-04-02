@@ -38,7 +38,6 @@ body {
 .main{
   display: flex;
   height: calc(100vh - 130px);
-  overflow: scroll;
 }
 /* サイドバー */
 .sideBar{
@@ -120,3 +119,6 @@ body {
     margin: auto 0;
 }
 
+.hashData{
+    display: flex;
+}

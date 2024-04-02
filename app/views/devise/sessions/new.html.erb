@@ -23,11 +23,11 @@
         <% end %>
 
           <div class="actions">
-            <%= f.submit "ろぐいん", class: "loginBtn" %>
+            <%= f.submit "ログイン", class: "loginBtn" %>
           </div>
           <div class=conformArea>
           <%- if controller_name != 'sessions' %>
-            <%= link_to "ろぐいん", new_session_path(resource_name), class: "conform" %><br />
+            <%= link_to "ログイン", new_session_path(resource_name), class: "conform" %><br />
           <% end %>
 
           <%- if devise_mapping.registerable? && controller_name != 'registrations' %>

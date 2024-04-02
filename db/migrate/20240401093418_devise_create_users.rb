@@ -12,6 +12,9 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.1]
       t.integer :sex_id,            null:false
       t.integer :status_id,         null:false
       t.integer :favorite_title_id, null:false
+      t.string  :phone_number,      null:false
+      t.integer :icon_id,           null:false
+
 
 
       ## Recoverable

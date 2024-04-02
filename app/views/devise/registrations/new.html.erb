@@ -4,7 +4,11 @@
         <p>※ポケともをご利用いただくには会員登録が必要です</p>
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <div class="fieldArea">
-      <%= render "devise/shared/error_messages", resource: resource %>
+      
+      <div class="field">
+          <%= f.label :nick_name, 'あなたの名前は？' %><br />
+          <%= f.text_field :nick_name, autofocus: true, autocomplete: "nick_name" %>
+        </div>
 
       <div class="field">
         <%= f.label :email %><br />
@@ -24,16 +28,54 @@
         <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
       </div>
       
+      <div class="hashData">
+        <div class="field">
+          <%= f.label :age_id, "年齢" %><br />
+          <%= f.collection_select(:age_id, Age.all, :id, :name, {}, {class:"select-box"}) %>
+        </div>
+
+        <div class="field">
+          <%= f.label :status_id, "職業" %><br />
+          <%= f.collection_select(:status_id, Status.all, :id, :name, {}, {class:"select-box"}) %>
+        </div>
+
+        <div class="field">
+          <%= f.label :sex_id, "性別" %><br />
+          <%= f.collection_select(:sex_id, Sex.all, :id, :name, {}, {class:"select-box"}) %>
+        </div>
+
+        <div class="field">
+          <%= f.label :favorite_title_id, "好きなタイトル" %><br />
+          <%= f.collection_select(:favorite_title_id, FavoriteTitle.all, :id, :name, {}, {class:"select-box"}) %>
+        </div>
+      </div>
+
       <div class="field">
-        <%= f.label :age_id, "年齢" %><br />
-        <%= f.collection_select(:age_id, Age.all, :id, :name, {}, {class:"select-box"}) %>
+        <%= f.label :phone_number %><br />
+        <%= f.text_field :phone_number, autofocus: true, autocomplete: "phone_number" %>
+      </div>
+
+      <div class="hashData">
+        <div class="field">
+          <%= f.label :icon_id, "あなたのイメージ" %><br />
+          <%= f.collection_select(:icon_id, Icon.all, :id, :name, {}, {class:"select-box"}) %>
+        </div>
+
+        <div class="field">
+          <%= f.label :profile, 'ひとこと!' %><br />
+          <%= f.text_field :profile, autofocus: true, autocomplete: "profile" %>
+        </div>
       </div>
 
       <div class="actions">
         <%= f.submit "Sign up", class: "loginBtn" %>
       </div>
+
+      <%= link_to "ログイン", new_session_path(resource_name), class: "conform" %><br />
       </div>
+      
     <% end %>
     </div>
+    
 </div>
-<%= render "devise/shared/links" %>
+
