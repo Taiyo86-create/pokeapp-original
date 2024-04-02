@@ -10,9 +10,9 @@
 | profile            | text    |                           |
 | age_id             | integer | null: false               |
 | sex_id             | integer | null: false               |
-| status_id          | string  | null: false               |
-| favorite_title_id  | string  | null: false               |
-| phone_number       | string  | null: false               |
+| status_id          | integer | null: false               |
+| favorite_title_id  | integer | null: false               |
+| phone_number       | integer | null: false               |
 
 ### Association
 

@@ -24,6 +24,8 @@
         <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
       </div>
 
+      <%= f.collection_select(:age_id, Age.all, :id, :name, {}, {class:"select-box"}) %>
+
       <div class="actions">
         <%= f.submit "Sign up", class: "loginBtn" %>
       </div>
