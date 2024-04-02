@@ -71,6 +71,7 @@
 
 .mypage{
     display: flex;
+    position: relative;
 }
 
 .mypageLeft{
@@ -116,10 +117,22 @@
 
 .optionBox{
     width: 20%;
-    padding: 10px 30px;
+    padding: 10px;
+    text-align: center;
     background-color: #d04f97;
     color: white;
     border-radius: 30px;
     white-space: nowrap;
     
+}
+
+.optionBox a{
+    color: white;
+}
+
+.returnHome{
+    position: absolute;
+    bottom: 1rem;
+    left: 2rem;
+    color: white;
 }

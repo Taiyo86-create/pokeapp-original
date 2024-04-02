@@ -58,7 +58,7 @@
       <div class="hashData">
         <div class="field">
           <%= f.label :icon_id, "あなたのイメージ" %><br />
-          <%= f.collection_select(:icon_id, Icon.all, :id, :image_path, {}, {class:"select-box"}) %>
+          <%= f.collection_select(:icon_id, Icon.all, :id, :name, {}, {class:"select-box"}) %>
         </div>
 
         <div class="field">
