@@ -18,7 +18,9 @@
             <div class="mainBigArea">
             <%= image_tag 'moonball.png', class:"moonball" %>
               <div class="mainBox">
-                <%= image_tag user.icon.image_path, class:"icon" %>
+                <%= link_to user_path(user) do %>
+                    <%= image_tag user.icon.image_path, class:"icon" %>
+                <% end %>
                 <ul class="intro">
                     <li><%= user.nick_name %></li>
                     <li> <%= user.age.name %></li>
