@@ -23,8 +23,11 @@
         <%= f.label :password_confirmation, "パスワード確認" %><br />
         <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
       </div>
-
-      <%= f.collection_select(:age_id, Age.all, :id, :name, {}, {class:"select-box"}) %>
+      
+      <div class="field">
+        <%= f.label :age_id, "年齢" %><br />
+        <%= f.collection_select(:age_id, Age.all, :id, :name, {}, {class:"select-box"}) %>
+      </div>
 
       <div class="actions">
         <%= f.submit "Sign up", class: "loginBtn" %>
