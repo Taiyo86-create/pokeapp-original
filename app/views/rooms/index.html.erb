@@ -16,7 +16,12 @@
           <% @users.each do |user| %>
           <% unless user == current_user %>
             <div class="mainBigArea">
-            <%= image_tag 'moonball.png', class:"moonball" %>
+            <% if user.sex.id == 2 %>
+                <%= image_tag 'moonball.png', class:"moonball" %>
+            <% end %>
+            <% if user.sex.id == 3 %>
+                <%= image_tag 'loveboll.png', class:"moonball" %>
+            <% end %>
               <div class="mainBox">
                 <%= link_to user_path(user) do %>
                     <%= image_tag user.icon.image_path, class:"icon" %>
