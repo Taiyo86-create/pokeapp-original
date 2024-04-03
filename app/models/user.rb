@@ -16,5 +16,7 @@ class User < ApplicationRecord
   validates :phone_number, presence: true, format: { with: /\A\d{10,11}\z/, message: "は10桁または11桁の半角数字で入力してください" }
   validates :nick_name, :age_id, :sex_id, :status_id, :favorite_title_id, :icon_id, presence: true
 
+  has_many :match_users
+  has_many :match, through: :match_users
 
 end
