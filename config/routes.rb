@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'rooms/index'
+  get 'users/index'
   devise_for :users
-  root to: "rooms#index"
+  root to: "users#index"
   resources :rooms
   resources :users
 end
