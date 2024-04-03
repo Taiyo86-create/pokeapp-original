@@ -1,0 +1,11 @@
+<div class="sideBar">
+            <ul>
+                <%= link_to  "探す", root_path %>
+                <li><a href="#">相手から</a></li>
+                <%= link_to  "チャット", rooms_path(current_user) %>
+            </ul>
+            
+                <%= link_to user_path(current_user) do %>
+                    <i class="bi bi-person-circle"></i>
+                <% end %>
+</div>

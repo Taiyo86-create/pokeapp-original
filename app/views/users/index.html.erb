@@ -1,16 +1,6 @@
 <%= render 'share/header' %>
 <div class="main">
-        <div class="sideBar">
-            <ul>
-                <li><a href="#">探す</a></li>
-                <li><a href="#">相手から</a></li>
-                <li><a href="#">チャット</a></li>
-            </ul>
-            
-                <%= link_to user_path(current_user) do %>
-                    <i class="bi bi-person-circle"></i>
-                <% end %>
-        </div>
+        <%= render  "share/side_bar" %>
 
         <div class="mainArea" id="mainArea">
           <% @users.each do |user| %>
