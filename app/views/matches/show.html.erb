@@ -26,9 +26,11 @@
             </div>
           <% end %>
           <% if current_user.id != @user.id %>
+            <%= form_with(model: @match_user, url: matches_path, method: :post ) do |f| %>
             <div class="optionBox">
-                <i class="bi bi-arrow-through-heart-fill"></i>君に決めた
+                <%= f.submit "君に決めた".html_safe, class: 'match-btn', id: 'button' %>
             </div>
+            <% end %>
           <% end %>
         </div>
     </div>
