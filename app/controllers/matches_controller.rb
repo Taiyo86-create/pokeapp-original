@@ -5,12 +5,16 @@ class MatchesController < ApplicationController
   end
 
   def create
-    @match_user = MatchUser.new(match_user_params)
+    @match = Match.new(match_params)
+    if @match.save
+      redirect_to root_path
+    else
+      render :show
+    end
   end
 
   private
-
-  def match_user_params
-    params.require(:match_user).permit(:user_id, :match_id)
+  def match_params
+    params.require(:match).permit(user_ids: [])
   end
 end

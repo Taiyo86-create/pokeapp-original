@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_03_082430) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_04_101541) do
   create_table "match_users", charset: "utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "match_id", null: false
@@ -21,10 +21,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_03_082430) do
   end
 
   create_table "matches", charset: "utf8", force: :cascade do |t|
-    t.bigint "matches_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["matches_id"], name: "index_matches_on_matches_id"
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_matches_on_user_id"
   end
 
   create_table "rooms", charset: "utf8", force: :cascade do |t|
@@ -49,11 +49,13 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_03_082430) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "match_id", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["match_id"], name: "index_users_on_match_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "match_users", "matches"
   add_foreign_key "match_users", "users"
-  add_foreign_key "matches", "matches", column: "matches_id"
+  add_foreign_key "matches", "users"
 end

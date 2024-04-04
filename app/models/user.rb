@@ -17,6 +17,6 @@ class User < ApplicationRecord
   validates :nick_name, :age_id, :sex_id, :status_id, :favorite_title_id, :icon_id, presence: true
 
   has_many :match_users
-  has_many :match, through: :match_users
+  has_many :matches, through: :match_users
 
 end
