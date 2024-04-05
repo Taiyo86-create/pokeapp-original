@@ -3,5 +3,4 @@ class Match < ApplicationRecord
   has_many :users, through: :match_users
 
   validates :user_id, presence: true
-  validates :match_id, presence: true
 end

@@ -6,7 +6,7 @@ class MatchesController < ApplicationController
   end
 
   def create
-    Match.create(match_params)
+    @match = Match.new(match_params)
     if @match.save
       redirect_to root_path
     else

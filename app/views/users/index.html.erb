@@ -13,7 +13,7 @@
                 <%= image_tag 'loveboll.png', class:"moonball" %>
             <% end %>
               <div class="mainBox">
-                <%= link_to match_path(user) do %>
+                <%= link_to user_match_path(id:user, user_id: user.id) do %>
                     <%= image_tag user.icon.image_path, class:"icon" %>
                 <% end %>
                 <ul class="intro">
