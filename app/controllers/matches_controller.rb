@@ -6,7 +6,8 @@ class MatchesController < ApplicationController
   end
 
   def create
-    @match = Match.new(match_params)
+    @user = User.find(params[:user_id])
+    @match = Match.create(match_params)
     if @match.save
       redirect_to root_path
     else
@@ -16,7 +17,7 @@ class MatchesController < ApplicationController
 
   private
   def match_params
-    params.require(:match).permit(user_ids: [])
+    params.require(:match).permit(:user_id)
   end
 
 end
