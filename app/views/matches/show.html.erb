@@ -26,7 +26,7 @@
             </div>
           <% end %>
           <% if current_user.id != @user.id %>
-            <%= form_with(model: @match, url: matches_path, local: true  ) do |f| %>
+            <%= form_with model: @match, url: matches_path, local: true do |f| %>
             <div class="optionBox">
                 <%= f.submit "君に決めた", class: 'match-btn', id: 'button' %>
             </div>
