@@ -25,7 +25,7 @@
                 <%= link_to  "ログアウト", destroy_user_session_path, data: { turbo_method: :delete} %>
             </div>
           <% end %>
-          <% if current_user.id != @user.id && @user.matches.present? %>
+          <% if current_user.id != @user.id %>
             <%= form_with model: @match, url: user_matches_path, local: true do |f| %>
             <div class="optionBox">
                 <%= f.hidden_field :user_id, value: @user.id %>
