@@ -25,14 +25,15 @@
                 <%= link_to  "ログアウト", destroy_user_session_path, data: { turbo_method: :delete} %>
             </div>
           <% end %>
-          <% if current_user.id != @user.id %>
-            <%= form_with model: @match, url: user_matches_path, local: true do |f| %>
-            <div class="optionBox">
-                <%= f.hidden_field :user_id, value: @user.id %>
-                <%= f.submit "君に決めた", class: 'match-btn' %>
-            </div>
+            <% if current_user.id != @user.id %>
+                <div class="optionBox">
+                    <% unless @user.liked_by?(current_user) %>
+                        <%= link_to "君に決めた", user_matches_path(@user.id), class: "match-btn", data: { turbo_method: :post } %>
+                    <% else %>
+                        <div class="matched-btn">お誘い済み</div>                    
+                    <% end %>
+                </div>
             <% end %>
-          <% end %>
         </div>
     </div>
     
