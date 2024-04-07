@@ -116,8 +116,7 @@
 }
 
 .optionBox{
-    width: 100%;
-    padding: 10px;
+    padding: 10px 30px;
     text-align: center;
     background-color: #d04f97;
     color: white;
@@ -128,6 +127,11 @@
 
 .match-btn{
     background-color: #d04f97;
+    border: none;
+    color: white;
+}
+
+.matched-btn{
     background-color: #d04f97;
     border: none;
     color: white;

@@ -7,9 +7,4 @@ class RoomsController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  def create
-    @match_user = MatchUser.new(match_user_params)
-  end
-
-
 end
