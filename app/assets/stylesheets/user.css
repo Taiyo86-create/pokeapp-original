@@ -116,7 +116,7 @@
 }
 
 .optionBox{
-    width: 20%;
+    width: 100%;
     padding: 10px;
     text-align: center;
     background-color: #d04f97;
@@ -126,8 +126,16 @@
     
 }
 
+.match-btn{
+    background-color: #d04f97;
+    background-color: #d04f97;
+    border: none;
+    color: white;
+}
+
 .optionBox a{
     color: white;
+    
 }
 
 .returnHome{
@@ -136,3 +144,4 @@
     left: 2rem;
     color: white;
 }
+

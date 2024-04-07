@@ -26,9 +26,12 @@
             </div>
           <% end %>
           <% if current_user.id != @user.id %>
+            <%= form_with model: @match, url: user_matches_path, local: true do |f| %>
             <div class="optionBox">
-                <i class="bi bi-arrow-through-heart-fill"></i>君に決めた
+                <%= f.hidden_field :user_id, value: @user.id %>
+                <%= f.submit "君に決めた", class: 'match-btn' %>
             </div>
+            <% end %>
           <% end %>
         </div>
     </div>
