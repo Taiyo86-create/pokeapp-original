@@ -9,7 +9,7 @@ end
   def create
     like = current_user.active_matches.new(liked_id: params[:user_id])
     like.save
-    redirect_to root_path
+    redirect_to rooms_path
   end
 
 end
