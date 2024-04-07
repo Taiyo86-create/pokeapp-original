@@ -29,7 +29,7 @@
             <%= form_with model: @match, url: user_matches_path, local: true do |f| %>
             <div class="optionBox">
                 <%= f.hidden_field :user_id, value: @user.id %>
-                <%= f.submit "君に決めた", class: 'match-btn', id: 'button' %>
+                <%= f.submit "君に決めた", class: 'match-btn' %>
             </div>
             <% end %>
           <% end %>

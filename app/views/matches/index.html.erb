@@ -1,10 +1,11 @@
+<%# 相手から %>
 <%= render 'share/header' %>
 <div class="main">
         <%= render  "share/side_bar" %>
 
         <div class="mainArea" id="mainArea">
           <% @users.each do |user| %>
-          <% unless user == current_user  %>
+          <% unless user == current_user || !current_user.match&.user_id.present?  %>
             <div class="mainBigArea">
               <% if user.sex.id == 2 %>
                 <%= image_tag 'moonball.png', class:"moonball" %>
