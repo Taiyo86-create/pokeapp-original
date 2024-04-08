@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_07_143403) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_08_035127) do
   create_table "match_users", charset: "utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "match_id", null: false
@@ -23,6 +23,20 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_07_143403) do
   create_table "matches", charset: "utf8", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "likes_id", null: false
+    t.bigint "liked_id", null: false
+    t.index ["liked_id"], name: "index_matches_on_liked_id"
+    t.index ["likes_id"], name: "index_matches_on_likes_id"
+  end
+
+  create_table "messages", charset: "utf8", force: :cascade do |t|
+    t.string "content"
+    t.bigint "match_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["match_id"], name: "index_messages_on_match_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "room_users", charset: "utf8", force: :cascade do |t|
@@ -61,6 +75,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_07_143403) do
 
   add_foreign_key "match_users", "matches"
   add_foreign_key "match_users", "users"
+  add_foreign_key "messages", "matches"
+  add_foreign_key "messages", "users"
   add_foreign_key "room_users", "rooms"
   add_foreign_key "room_users", "users"
 end
