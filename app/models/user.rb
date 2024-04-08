@@ -27,4 +27,9 @@ class User < ApplicationRecord
     liked =  passive_matches.find_by(likes_id: user.id)
     return liked.present?
   end
+
+  def likes_by?(user)
+    liked =  active_matches.find_by(liked_id: user.id)
+    return likes.present?
+  end
 end
