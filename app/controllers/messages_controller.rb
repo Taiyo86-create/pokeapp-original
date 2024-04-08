@@ -1,5 +1,6 @@
 class MessagesController < ApplicationController
   def new
+    @messages = Message.all
     @message = Message.new
     @match = Match.find(params[:match_id])
   end
