@@ -11,8 +11,8 @@
               
               <% @matches.each do |match| %>
                  <% @users.each do |user| %>   
-                   <% if !user == current_user && !user.liked_by?(current_user) || user.likes_by?(current_user)%>
-                    <li>
+                   <% unless user == current_user || !user.liked_by?(current_user) && !user.likes_by?(current_user) %>
+                    <li> 
                       <%= link_to user_match_path(id:user, user_id: user.id) do %>  
                         <%= image_tag user.icon.image_path, class: "chatIcon"%>
                       <% end %>
