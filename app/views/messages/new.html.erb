@@ -5,7 +5,7 @@
 <div class="main">
         <%= render  "share/side_bar" %>
 
-        <div class="talkArea">
+      <div class="talkArea">
 
         <div class="message">
             <div class="upper-message">
@@ -22,9 +22,12 @@
                 </div>
             </div>
         </div>
-        <div class="talkSubmit">
-            <input type="text" class="textArea">
-            <button type="submit" class="submit-btn">送信</button>
-        </div>
-    </div>
+        <%= form_with model: @message, url: user_match_messages_path, local: true do |form| %>
+          <div class="talkSubmit">
+            <%= form.text_field :content, class: "textArea" %>
+            <%= form.submit "送信", class: "submit-btn" %>
+          </div>
+        <% end %>
+
+      </div>
 </div>

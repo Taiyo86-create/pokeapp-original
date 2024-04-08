@@ -12,5 +12,4 @@ end
     like.save
     redirect_to user_matches_path
   end
-
 end
